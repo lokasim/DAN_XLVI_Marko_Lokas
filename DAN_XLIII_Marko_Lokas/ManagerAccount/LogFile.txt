@@ -2,3 +2,7 @@
 [02-Jul-20 16:45] Manager: [Igor Lokas] Position: [tester] Sector: [R&D] Access Level: [read-only] Username: [igorlokas] Password: [] Email: [mihajlo@gmail.com] JMBG: [1111992123123] 
 [02-Jul-20 16:46] Manager: [Marko Lokas] Position: [Developer] Sector: [R&D] Access Level: [modify] Username: [markolokas] Password: [] Email: [lokasmarko@gmail.com] JMBG: [2403995123123] 
 [02-Jul-20 16:51] Manager: [Nikola Savic] Position: [SoftwerDeveloper] Sector: [R&D] Access Level: [read-only] Username: [nikolas] Password: [nikolas] Email: [nikola@gmail.com] JMBG: [1111999123123] 
+[14-Jul-20 14:45] Manager: [Marko Lokas] Position: [SoftwareDevelopment] Sector: [HR] Access Level: [modify] Username: [lokasmarko] Password: [lokasmarko] Email: [lokasmarko@gmail.com] JMBG: [2403995123123] 
+[14-Jul-20 16:31] Manager: [Nikola Lokas] Position: [finansije] Sector: [Finance] Access Level: [modify] Username: [lokasnikola] Password: [lokasnikola] Email: [lokasnikola@gmail.com] JMBG: [2403994123123] 
+[14-Jul-20 16:46] Manager: [vladimir Cota] Position: [100] Sector: [HR] Access Level: [read-only] Username: [vladimir] Password: [vladimir] Email: [vladimir@gmail.com] JMBG: [2403991123123] 
+[14-Jul-20 17:05] Manager: [Tralal Tralala] Position: [Traktorista] Sector: [R&D] Access Level: [modify] Username: [tralala] Password: [tralala] Email: [tralala@gmail.com] JMBG: [2403999123123] 

@@ -25,6 +25,18 @@ namespace ManagerAccount.Views
         {
             InitializeComponent();
             this.DataContext = new PersonalReportsViewModel(this);
+            
+        }
+        
+        private void RefreshSector_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new PersonalReportsViewModel(this);
+        }
+
+        public void RefreshPersonal()
+        {
+            this.DataContext = new PersonalReportsViewModel(this);
         }
     }
+
 }

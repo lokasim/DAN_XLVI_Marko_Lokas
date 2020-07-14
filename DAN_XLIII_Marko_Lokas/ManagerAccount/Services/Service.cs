@@ -177,6 +177,24 @@ namespace ManagerAccount.Services
             }
         }
 
+        public List<tblReport> GetAllReporttbl()
+        {
+            try
+            {
+                using (ManagerAppEntities context = new ManagerAppEntities())
+                {
+                    List<tblReport> list = new List<tblReport>();
+                    list = (from x in context.tblReports select x).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception: " + ex.Message.ToString());
+                return null;
+            }
+        }
+
         public List<vwReportEmployee> GetAllReportID(int ID)
         {
             try
@@ -185,6 +203,24 @@ namespace ManagerAccount.Services
                 {
                     List<vwReportEmployee> list = new List<vwReportEmployee>();
                     list = (from x in context.vwReportEmployees where x.EmployeeID==ID select x).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception: " + ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public List<tblReport> GetAllReportIDtbl(int ID)
+        {
+            try
+            {
+                using (ManagerAppEntities context = new ManagerAppEntities())
+                {
+                    List<tblReport> list = new List<tblReport>();
+                    list = (from x in context.tblReports where x.Employee == ID select x).ToList();
                     return list;
                 }
             }
@@ -288,6 +324,132 @@ namespace ManagerAccount.Services
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Exception" + ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public void DeleteReport(int reportID)
+        {
+            try
+            {
+                using (ManagerAppEntities context = new ManagerAppEntities())
+                {
+                    tblReport reportToDelete = (from r in context.tblReports where r.ReportID== reportID select r).First();
+                    context.tblReports.Remove(reportToDelete);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception: " + ex.Message.ToString());
+            }
+        }
+
+        public void DeleteReportvw(int reportID)
+        {
+            try
+            {
+                using (ManagerAppEntities context = new ManagerAppEntities())
+                {
+                    vwReportEmployee reportToDelete = (from r in context.vwReportEmployees where r.ReportID == reportID select r).First();
+                    context.vwReportEmployees.Remove(reportToDelete);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception: " + ex.Message.ToString());
+            }
+        }
+
+        public bool IsReportID(int reportID)
+        {
+            try
+            {
+                using (ManagerAppEntities context = new ManagerAppEntities())
+                {
+                    int result = (from x in context.tblReports where x.ReportID == reportID select x.ReportID).FirstOrDefault();
+
+                    if (result != 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+                return false;
+            }
+        }
+
+        public bool IsReportIDvw(int reportID)
+        {
+            try
+            {
+                using (ManagerAppEntities context = new ManagerAppEntities())
+                {
+                    int result = (from x in context.vwReportEmployees where x.ReportID == reportID select x.ReportID).FirstOrDefault();
+
+                    if (result != 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception " + ex.Message.ToString());
+                return false;
+            }
+        }
+
+        public tblReport AddReport(tblReport report)
+        {
+            try
+            {
+                using (ManagerAppEntities context = new ManagerAppEntities())
+                {
+                    if (report.ReportID == 0)
+                    {
+                        tblReport newProducts = new tblReport
+                        {
+                            CurrentDate = report.CurrentDate,
+                            ProjectName = report.ProjectName,
+                            WorkHour = report.WorkHour,
+                            Employee = report.Employee,
+                            Position = report.Position
+                        };
+                        context.tblReports.Add(newProducts);
+                        context.SaveChanges();
+                        report.ReportID = newProducts.ReportID;
+                        return report;
+                    }
+                    else
+                    {
+                        tblReport reportToEdit = (from ss in context.tblReports where ss.ReportID == report.ReportID select ss).First();
+                        reportToEdit.CurrentDate = report.CurrentDate;
+                        reportToEdit.ProjectName = report.ProjectName;
+                        reportToEdit.WorkHour = report.WorkHour;
+                        reportToEdit.Employee = report.Employee;
+                        reportToEdit.Position = report.Position;
+                        reportToEdit.ReportID = report.ReportID;
+                        context.SaveChanges();
+                        return report;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception: " + ex.Message.ToString());
                 return null;
             }
         }

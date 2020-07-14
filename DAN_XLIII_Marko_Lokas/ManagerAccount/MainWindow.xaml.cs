@@ -116,12 +116,14 @@ namespace ManagerAccount
                 if (Char.IsLower(c) || Char.IsUpper(c) || Char.IsDigit(c) || Char.IsControl(c))
                 {
                     loginFail.Visibility = Visibility.Collapsed;
-                    //tbCapsLock.Visibility = Visibility.Collapsed;
+                    tbCapsLock.Visibility = Visibility.Collapsed;
+
                     continue;
                 }
                 else
                 {
                     tbCapsLock.Visibility = Visibility.Visible;
+                    tbCapsLock.Text = "Only lowercase letters are allowed";
                     //loginFail.Visibility = Visibility.Collapsed;
                     SystemSounds.Beep.Play();
                     return false;
@@ -152,7 +154,7 @@ namespace ManagerAccount
         {
             this.Close();
 
-            Application.Current.Shutdown();
+            Environment.Exit(0);
         }
 
         private void BtnNotVisible_Click(object sender, RoutedEventArgs e)

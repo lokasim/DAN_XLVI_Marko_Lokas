@@ -431,7 +431,7 @@
                     </materialDesign:TransitioningContent.OpeningEffect>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="txtKorisnickoIme"
-                                 materialDesign:HintAssist.Hint="Korisničko ime"
+                                 materialDesign:HintAssist.Hint="Username"
                                  Width="200"
                                  TextChanged="Korisnicko"
                                  MaxLength="30"
@@ -454,7 +454,7 @@
                                                          Duration="0:0:1"></materialDesign:TransitionEffect>
                     </materialDesign:TransitioningContent.OpeningEffect>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox materialDesign:HintAssist.Hint="Lozinka"
+                        <TextBox materialDesign:HintAssist.Hint="Password"
                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                  x:Name="txtLozinkaRegistracija"
                                  Width="150"
@@ -466,7 +466,7 @@
                                  TextChanged="Lozinka"
                                  PreviewKeyDown="TxtBox_PreviewKeyDown"
                                  PreviewTextInput="PreviewTextInputHandlerVelika"></TextBox>
-                        <TextBox materialDesign:HintAssist.Hint="Ponovi lozinku"
+                        <TextBox materialDesign:HintAssist.Hint="Re-password"
                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                  x:Name="txtReLozinkaRegistracija"
                                  Width="150"

@@ -88,6 +88,7 @@
     <Compile Include="ValidationJMBG.cs" />
     <Compile Include="ViewModels\AddReportViewmodel.cs" />
     <Compile Include="ViewModels\EmployeeMenuViewModel.cs" />
+    <Compile Include="ViewModels\FinanceViewModel.cs" />
     <Compile Include="ViewModels\ItemMenu.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\PersonalReportsViewModel.cs" />
@@ -100,6 +101,9 @@
     </Compile>
     <Compile Include="Views\AddReport.xaml.cs">
       <DependentUpon>AddReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FinanceView.xaml.cs">
+      <DependentUpon>FinanceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PersonalReports.xaml.cs">
       <DependentUpon>PersonalReports.xaml</DependentUpon>
@@ -137,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FinanceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

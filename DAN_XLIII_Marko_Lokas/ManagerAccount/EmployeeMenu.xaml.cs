@@ -85,8 +85,7 @@ namespace ManagerAccount
                 {
                     var menuReports = new List<SubItem>
                     {
-                        new SubItem("Write personal Reports", new PersonalReports()),
-                        new SubItem("Wiew all Reports", new Reports())
+                        new SubItem("Write personal Reports", new PersonalReports())
 
                     };
 
@@ -133,14 +132,13 @@ namespace ManagerAccount
                 {
                     var menuReports = new List<SubItem>
                     {
-                        new SubItem("Write personal Reports",new PersonalReports()),
-                        new SubItem("Wiew all Reports", new Reports())
+                        new SubItem("Write personal Reports",new PersonalReports())
                     };
 
                     var item1 = new ItemMenu("Reports", menuReports, PackIconKind.FileReport);
                     var menuWorkHours = new List<SubItem>
                     {
-                        new SubItem("Work Hours"),
+                        new SubItem("Work Hours", new FinanceView()),
                     };
 
                     var item3 = new ItemMenu("Work hours", menuWorkHours, PackIconKind.EuroSymbol);

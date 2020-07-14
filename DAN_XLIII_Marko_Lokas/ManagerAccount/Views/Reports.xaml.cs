@@ -28,10 +28,13 @@ namespace ManagerAccount.Views
 
             if (LoggedEmployee.accessLevel == "read-only")
             {
-                btnAddReport.Visibility = Visibility.Collapsed;
                 btnEditReport.Visibility = Visibility.Collapsed;
                 btnDeleteReport.Visibility = Visibility.Collapsed;
             }
+        }
+        private void RefreshSector_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new ReportsViewModel(this);
         }
     }
 }

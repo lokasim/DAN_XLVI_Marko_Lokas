@@ -121,3 +121,5 @@ C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccou
 C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\obj\Debug\ManagerAccount.csproj.CopyComplete
 C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\obj\Debug\ManagerAccount.exe
 C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\obj\Debug\ManagerAccount.pdb
+C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\obj\Debug\Views\FinanceView.g.cs
+C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\obj\Debug\Views\FinanceView.baml

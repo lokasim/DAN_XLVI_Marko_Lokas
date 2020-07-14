@@ -1,7 +1,9 @@
-﻿using ManagerAccount.ViewModels;
+﻿using ManagerAccount.Models;
+using ManagerAccount.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,7 +28,17 @@ namespace ManagerAccount.Views
             InitializeComponent();
             this.DataContext = new AddReportViewmodel(this);
             this.Language = XmlLanguage.GetLanguage("sr-SR");
-            txtProject.Focus();
+            txtWorkHours.Focus();
+        }
+
+        public AddReport(tblReport reportEdit)
+        {
+            InitializeComponent();
+
+            this.DataContext = new AddReportViewmodel(this, reportEdit);
+            this.Language = XmlLanguage.GetLanguage("sr-SR");
+            txtWorkHours.Focus();
+
         }
 
         private void DragMe(object sender, MouseButtonEventArgs e)
@@ -39,6 +51,41 @@ namespace ManagerAccount.Views
             {
 
                 // throw;
+            }
+        }
+
+        /// <summary>
+        /// A method that allows only numbers to be entered
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private Boolean NumberAllowed(String s)
+        {
+            foreach (Char c in s.ToCharArray())
+            {
+                if (Char.IsDigit(c) || Char.IsControl(c))
+                {
+                    continue;
+                }
+                else
+                {
+                    SystemSounds.Beep.Play();
+                    return false;
+                }
+            }
+            return true;
+        }
+        private void PreviewNumberInputHandler(Object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !NumberAllowed(e.Text);
+        }
+
+        private void TxtBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = e.Key == Key.Space;
+            if (e.Key == Key.Space)
+            {
+                SystemSounds.Beep.Play();
             }
         }
     }

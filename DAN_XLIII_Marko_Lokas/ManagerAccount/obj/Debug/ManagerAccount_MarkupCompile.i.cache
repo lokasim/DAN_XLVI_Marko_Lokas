@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\panonit\Desktop\DAN_XLIII_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\obj\Debug\
+C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\obj\Debug\
 ManagerAccount
 none
 false
 DEBUG;TRACE
-C:\Users\panonit\Desktop\DAN_XLIII_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\App.xaml
-81428435176
+C:\Users\panonit\Desktop\DAN_XLVI_Marko_Lokas\DAN_XLIII_Marko_Lokas\ManagerAccount\App.xaml
+9970220591
 31606207940
-40-1251974775
-20-1115746420
-Employee.xaml;EmployeeMenu.xaml;MainWindow.xaml;UserControlMenuItem.xaml;ViewOneEmployee.xaml;Views\AddReport.xaml;Views\PersonalReports.xaml;Views\Reports.xaml;
+42-1123491368
+20-678694948
+Employee.xaml;EmployeeMenu.xaml;MainWindow.xaml;UserControlMenuItem.xaml;ViewOneEmployee.xaml;Views\AddReport.xaml;Views\FinanceView.xaml;Views\PersonalReports.xaml;Views\Reports.xaml;
 
 False
 

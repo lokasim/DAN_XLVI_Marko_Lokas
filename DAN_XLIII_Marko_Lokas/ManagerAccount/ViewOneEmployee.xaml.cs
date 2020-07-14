@@ -26,13 +26,7 @@ namespace ManagerAccount
         {
             InitializeComponent();
             this.DataContext = new ViewOneEmployeeViewModel(this);
-
-            if (LoggedEmployee.accessLevel == "read-only")
-            {
-                btnAddEmployee.Visibility = Visibility.Collapsed;
-                btnEditEmployee.Visibility = Visibility.Collapsed;
-                btnDeleteEmployee.Visibility = Visibility.Collapsed;
-            }
+            
 
         }
 

@@ -20,119 +20,128 @@
         Background="Transparent"
         WindowStartupLocation="CenterOwner">
     <Grid>
-        <Grid Name="zamagljno"
-              Visibility="Visible"
-              Background="Black"
-              Opacity="0.4"></Grid>
-        <Grid  Height="350"
-               Width="450">
-            <StackPanel VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Margin="0,490,5,0"></StackPanel>
-            <Grid Margin="4"
-                  Background="White">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="80"></RowDefinition>
-                    <RowDefinition Height="20"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="80*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Stretch"
-                           VerticalAlignment="Stretch"
-                           Grid.Row="0"
-                           Background="#2196F3">
+        <Border BorderBrush="Blue"
+                Height="350"
+                Width="450"
+                BorderThickness="3">
+            <Grid  Height="347"
+                   Width="450"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch">
+                <StackPanel VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="0,490,5,0"></StackPanel>
+                <Grid Margin="4"
+                      Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="80*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Stretch"
+                               VerticalAlignment="Stretch"
+                               Grid.Row="0"
+                               Background="#2196F3">
             <Label x:Name="lblNaslov"
-                    Foreground="White"
-                    Margin="0,10,0,0"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Stretch"
-                    BorderBrush="#89000000"
-                    FontSize="36"
-                    FontWeight="Bold"
-                    Width="440"
-                    Content="{Binding naslov}">
+                        Foreground="White"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Stretch"
+                        BorderBrush="#89000000"
+                        FontSize="36"
+                        FontWeight="Bold"
+                        Width="440"
+                        Content="{Binding naslov}">
                 
             </Label></TextBlock>
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TextBox    Grid.Row="2"
-                                Grid.Column="1"
-                                x:Name="txtWorkHours"
-                                HorizontalContentAlignment="Center"
-                                materialDesign:HintAssist.Hint="Work hours"
-                                Width="100"
-                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                Height="40"
-                                HorizontalAlignment="Left"
-                                Margin="35,0,0,0"
-                                SelectionBrush="#FF8BC34A"></TextBox>
-                    <DatePicker Grid.Column="0"
-                                Grid.Row="2"
-                                x:Name="dpDateReports"
-                                HorizontalAlignment="Right"
-                                materialDesign:HintAssist.Hint="Date"
-                                Margin="0,0,35,0"
-                                Height="40"
-                                Width="100"
-                                SelectedDate="{x:Static system:DateTime.Now}"
-                                SelectedDateFormat="Short"
-                                HorizontalContentAlignment="Center" />
-                </Grid>
-                <Grid Grid.Row="3">
-                    <TextBox    Grid.Row="2"
-                                x:Name="txtProject"
-                                materialDesign:HintAssist.Hint="Project Name"
-                                Width="270"
-                                HorizontalContentAlignment="Center"
-                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                Height="40"
-                                Margin="0,0,0,0"
-                                SelectionBrush="#FF8BC34A"></TextBox>
-                </Grid>
-                <Grid Grid.Row="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="1"
-                            x:Name="btnDodaj"
-                            Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
-                            ToolTip="{Binding dugmeDodaj}"
-                            Margin="-40,0,0,0"
-                            Width="60"
-                            Height="60"
-                            Command="{Binding SaveReport, UpdateSourceTrigger=PropertyChanged}"
-                            Background="#FF8BC34A"
-                            BorderBrush="{x:Null}">
-                        <materialDesign:PackIcon VerticalAlignment="Center"
-                                                 HorizontalAlignment="Right"
-                                                 Kind="Check"
-                                                 Height="40"
-                                                 Width="40" />
-                    </Button>
-                    <Button Grid.Column="0"
-                            x:Name="btnIzlaz"
-                            Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
-                            ToolTip="Napusti dijalog"
-                            Margin="40,0,0,0"
-                            Width="60"
-                            Height="60"
-                            Command="{Binding CloseReport, UpdateSourceTrigger=PropertyChanged}"
-                            Background="#FFC34A4A"
-                            BorderBrush="{x:Null}">
-                        <materialDesign:PackIcon VerticalAlignment="Center"
-                                                 HorizontalAlignment="Left"
-                                                 Kind="Close"
-                                                 Height="40"
-                                                 Width="40" />
-                    </Button>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox    Grid.Row="2"
+                                    Grid.Column="1"
+                                    x:Name="txtWorkHours"
+                                    MaxLength="2"
+                                    PreviewKeyDown="TxtBox_PreviewKeyDown"
+                                    PreviewTextInput="PreviewNumberInputHandler"
+                                    HorizontalContentAlignment="Center"
+                                    materialDesign:HintAssist.Hint="Work hours"
+                                    Width="100"
+                                    Text="{Binding Report.WorkHour, UpdateSourceTrigger=PropertyChanged}"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    Height="40"
+                                    HorizontalAlignment="Left"
+                                    Margin="35,0,0,0"
+                                    SelectionBrush="#FF8BC34A"></TextBox>
+                        <DatePicker Grid.Column="0"
+                                    Grid.Row="2"
+                                    x:Name="dpDateReports"
+                                    HorizontalAlignment="Right"
+                                    materialDesign:HintAssist.Hint="Date"
+                                    Margin="0,0,35,0"
+                                    Height="40"
+                                    Width="100"
+                                    Text="{Binding Report.CurrentDate, UpdateSourceTrigger=PropertyChanged}"
+                                    SelectedDate="{x:Static system:DateTime.Now}"
+                                    SelectedDateFormat="Short"
+                                    HorizontalContentAlignment="Center" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <TextBox    Grid.Row="2"
+                                    x:Name="txtProject"
+                                    materialDesign:HintAssist.Hint="Project Name"
+                                    Width="270"
+                                    HorizontalContentAlignment="Center"
+                                    Text="{Binding Report.ProjectName, UpdateSourceTrigger=PropertyChanged}"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    Height="50"
+                                    Margin="0,0,0,0"
+                                    SelectionBrush="#FF8BC34A"></TextBox>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1"
+                                x:Name="btnDodaj"
+                                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                ToolTip="{Binding dugmeDodaj}"
+                                Margin="-40,0,0,0"
+                                Width="60"
+                                Height="60"
+                                Command="{Binding Save, UpdateSourceTrigger=PropertyChanged}"
+                                Background="#FF8BC34A"
+                                BorderBrush="{x:Null}">
+                            <materialDesign:PackIcon VerticalAlignment="Center"
+                                                     HorizontalAlignment="Right"
+                                                     Kind="Check"
+                                                     Height="40"
+                                                     Width="40" />
+                        </Button>
+                        <Button Grid.Column="0"
+                                x:Name="btnIzlaz"
+                                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                ToolTip="Napusti dijalog"
+                                Margin="40,0,0,0"
+                                Width="60"
+                                Height="60"
+                                Command="{Binding Close, UpdateSourceTrigger=PropertyChanged}"
+                                Background="#FFC34A4A"
+                                BorderBrush="{x:Null}">
+                            <materialDesign:PackIcon VerticalAlignment="Center"
+                                                     HorizontalAlignment="Left"
+                                                     Kind="Close"
+                                                     Height="40"
+                                                     Width="40" />
+                        </Button>
+                    </Grid>
                 </Grid>
             </Grid>
-        </Grid>
+        </Border>
     </Grid>
 </Window>
