@@ -88,7 +88,6 @@ namespace ManagerAccount.ViewModels
                 main.dpDatumRodjenja.Text = "1.1.1990";
                 main.tbCapsLock.Visibility = Visibility.Collapsed;
                 main.ShowDialog();
-
                 if ((main.DataContext as MainWindowViewModel).IsUpdateEmployee == true)
                 {
                     main.Close();
@@ -97,6 +96,7 @@ namespace ManagerAccount.ViewModels
 
 
                 }
+                addEmployee = false;
             }
             catch (Exception ex)
             {

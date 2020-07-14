@@ -406,10 +406,10 @@ namespace ManagerAccount.ViewModels
                 main.SignUp.Visibility = Visibility.Collapsed;
 
                 string poruka = "Add Employee: " + Employee.EmployeeName + " " + Employee.EmployeeSurname;
-                if (EmployeeMenuViewModel.addEmployee != true)
-                {
+                //if (EmployeeMenuViewModel.addEmployee != true)
+                //{
                     MessageBox.Show(poruka, "successfully added employee", MessageBoxButton.OK);
-                }
+                //}
                 main.txtIme.Text = "";
                 main.txtPrezime.Text = "";
                 main.txtJMBG.Text = "";
@@ -424,7 +424,7 @@ namespace ManagerAccount.ViewModels
                 main.cbxSector.Text = "";
                 main.cbxAccessLevel.Text = "";
                 main.NameTextBox.Focus();
-                if(EmployeeMenuViewModel.addEmployee == true)
+                if (EmployeeMenuViewModel.addEmployee == true)
                 {
                     main.Close();
                 }
