@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManagerAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAccessLevel">
+    <Key>
+      <PropertyRef Name="AccessLevelID" />
+    </Key>
+    <Property Name="AccessLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccessLevel" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="DateOfBirthday" Type="date" Nullable="false" />
+    <Property Name="JMBG" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Salary" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UsernameLogin" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PasswordLogin" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SectorName" Type="int" />
+    <Property Name="AccessLevel" Type="int" />
+  </EntityType>
+  <EntityType Name="tblReport">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrentDate" Type="date" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="WorkHour" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Employee" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSector">
+    <Key>
+      <PropertyRef Name="SectorID" />
+    </Key>
+    <Property Name="SectorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectorName" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ManagerApp.dbo.vwManager' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwManager">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="EmployeeName" />
+      <PropertyRef Name="EmployeeSurname" />
+      <PropertyRef Name="DateOfBirthday" />
+      <PropertyRef Name="JMBG" />
+      <PropertyRef Name="AccountNumber" />
+      <PropertyRef Name="EMail" />
+      <PropertyRef Name="Salary" />
+      <PropertyRef Name="Position" />
+      <PropertyRef Name="UsernameLogin" />
+      <PropertyRef Name="PasswordLogin" />
+      <PropertyRef Name="SectorID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="AccessLevelID" />
+      <PropertyRef Name="Expr2" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="DateOfBirthday" Type="date" Nullable="false" />
+    <Property Name="JMBG" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Salary" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UsernameLogin" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PasswordLogin" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SectorName" Type="int" />
+    <Property Name="AccessLevel" Type="int" />
+    <Property Name="SectorID" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AccessLevelID" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ManagerApp.dbo.vwReportEmployee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwReportEmployee">
+    <Key>
+      <PropertyRef Name="ReportID" />
+      <PropertyRef Name="CurrentDate" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="WorkHour" />
+      <PropertyRef Name="Employee" />
+      <PropertyRef Name="Position" />
+      <PropertyRef Name="EmployeeName" />
+      <PropertyRef Name="EmployeeSurname" />
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="ReportID" Type="int" Nullable="false" />
+    <Property Name="CurrentDate" Type="date" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="WorkHour" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Employee" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Employee_AccessLevel">
+    <End Role="tblAccessLevel" Type="Self.tblAccessLevel" Multiplicity="0..1" />
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAccessLevel">
+        <PropertyRef Name="AccessLevelID" />
+      </Principal>
+      <Dependent Role="tblEmployee">
+        <PropertyRef Name="AccessLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Sector">
+    <End Role="tblSector" Type="Self.tblSector" Multiplicity="0..1" />
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSector">
+        <PropertyRef Name="SectorID" />
+      </Principal>
+      <Dependent Role="tblEmployee">
+        <PropertyRef Name="SectorName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Report_Employee">
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="1" />
+    <End Role="tblReport" Type="Self.tblReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEmployee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="tblReport">
+        <PropertyRef Name="Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ManagerAppModelStoreContainer">
+    <EntitySet Name="tblAccessLevel" EntityType="Self.tblAccessLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblReport" EntityType="Self.tblReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSector" EntityType="Self.tblSector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwManager" EntityType="Self.vwManager" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwManager].[EmployeeID] AS [EmployeeID], 
+    [vwManager].[EmployeeName] AS [EmployeeName], 
+    [vwManager].[EmployeeSurname] AS [EmployeeSurname], 
+    [vwManager].[DateOfBirthday] AS [DateOfBirthday], 
+    [vwManager].[JMBG] AS [JMBG], 
+    [vwManager].[AccountNumber] AS [AccountNumber], 
+    [vwManager].[EMail] AS [EMail], 
+    [vwManager].[Salary] AS [Salary], 
+    [vwManager].[Position] AS [Position], 
+    [vwManager].[UsernameLogin] AS [UsernameLogin], 
+    [vwManager].[PasswordLogin] AS [PasswordLogin], 
+    [vwManager].[SectorName] AS [SectorName], 
+    [vwManager].[AccessLevel] AS [AccessLevel], 
+    [vwManager].[SectorID] AS [SectorID], 
+    [vwManager].[Expr1] AS [Expr1], 
+    [vwManager].[AccessLevelID] AS [AccessLevelID], 
+    [vwManager].[Expr2] AS [Expr2]
+    FROM [dbo].[vwManager] AS [vwManager]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwReportEmployee" EntityType="Self.vwReportEmployee" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwReportEmployee].[ReportID] AS [ReportID], 
+    [vwReportEmployee].[CurrentDate] AS [CurrentDate], 
+    [vwReportEmployee].[ProjectName] AS [ProjectName], 
+    [vwReportEmployee].[WorkHour] AS [WorkHour], 
+    [vwReportEmployee].[Employee] AS [Employee], 
+    [vwReportEmployee].[Position] AS [Position], 
+    [vwReportEmployee].[EmployeeName] AS [EmployeeName], 
+    [vwReportEmployee].[EmployeeSurname] AS [EmployeeSurname], 
+    [vwReportEmployee].[EmployeeID] AS [EmployeeID], 
+    [vwReportEmployee].[Expr1] AS [Expr1]
+    FROM [dbo].[vwReportEmployee] AS [vwReportEmployee]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Employee_AccessLevel" Association="Self.FK_Employee_AccessLevel">
+      <End Role="tblAccessLevel" EntitySet="tblAccessLevel" />
+      <End Role="tblEmployee" EntitySet="tblEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Sector" Association="Self.FK_Employee_Sector">
+      <End Role="tblSector" EntitySet="tblSector" />
+      <End Role="tblEmployee" EntitySet="tblEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Report_Employee" Association="Self.FK_Report_Employee">
+      <End Role="tblEmployee" EntitySet="tblEmployee" />
+      <End Role="tblReport" EntitySet="tblReport" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,4 @@
+[02-Jul-20 16:43] Manager: [NIkola Lokas] Position: [Prodaja] Sector: [Finance] Access Level: [modify] Username: [nikola] Password: [] Email: [nikola@gmail.com] JMBG: [1212921231232] 
+[02-Jul-20 16:45] Manager: [Igor Lokas] Position: [tester] Sector: [R&D] Access Level: [read-only] Username: [igorlokas] Password: [] Email: [mihajlo@gmail.com] JMBG: [1111992123123] 
+[02-Jul-20 16:46] Manager: [Marko Lokas] Position: [Developer] Sector: [R&D] Access Level: [modify] Username: [markolokas] Password: [] Email: [lokasmarko@gmail.com] JMBG: [2403995123123] 
+[02-Jul-20 16:51] Manager: [Nikola Savic] Position: [SoftwerDeveloper] Sector: [R&D] Access Level: [read-only] Username: [nikolas] Password: [nikolas] Email: [nikola@gmail.com] JMBG: [1111999123123] 
